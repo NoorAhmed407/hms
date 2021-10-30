@@ -1,5 +1,6 @@
 import { Button, Typography } from "antd";
 import React from "react";
+import { Link } from "react-router-dom";
 import InputField from "./InputField";
 
 function RegisterForm(props) {
@@ -36,6 +37,9 @@ function RegisterForm(props) {
           placeholder={"Enter Address"}
           onChange={() => {}}
         />
+      </div>
+      <div className="my-2">
+        <Link to="/login">SignIn</Link>
       </div>
       <div className="my-2">
         <Button type="primary">Register</Button>

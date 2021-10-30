@@ -5,7 +5,6 @@ import FormLogin from "../Component/FormLogin";
 function Login(props) {
   return (
     <div>
-      <Typography.Title level={1}>Login</Typography.Title>
       <FormLogin />
     </div>
   );

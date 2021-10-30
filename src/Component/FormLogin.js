@@ -1,6 +1,7 @@
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button, Checkbox, Typography } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
+import InputField from "./InputField";
 
 const FormLogin = () => {
   const onFinish = (values) => {
@@ -12,58 +13,31 @@ const FormLogin = () => {
   };
 
   return (
-    <Form
-      name="basic"
-      labelCol={{
-        span: 8,
-      }}
-      wrapperCol={{
-        span: 16,
-      }}
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-    >
-      <Form.Item
-        label="Username"
-        name="username"
-        rules={[
-          {
-            required: true,
-            message: "Please input your username!",
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        label="Password"
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: "Please input your password!",
-          },
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
-      <Link to="/register">Signup</Link>
-      <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
+    <div>
+      <Typography.Title>Login</Typography.Title>
+      <div className="my-2">
+        <InputField
+          name={"email"}
+          type={"email"}
+          placeholder={"Enter Email"}
+          onChange={() => {}}
+        />
+      </div>
+      <div className="my-2">
+        <InputField
+          name={"password"}
+          type={"password"}
+          placeholder={"Enter Password"}
+          onChange={() => {}}
+        />
+      </div>
+      <div className="my-2">
+        <Link to="/register">SignUp</Link>
+      </div>
+      <div className="my-2">
+        <Button type="primary">Login</Button>
+      </div>
+    </div>
   );
 };
 

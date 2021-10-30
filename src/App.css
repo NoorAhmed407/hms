@@ -2,13 +2,13 @@
   text-align: center;
 }
 
-.centerbox {
+/* .centerbox {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .box1 {
   width: 50%;
