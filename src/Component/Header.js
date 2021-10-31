@@ -1,8 +1,24 @@
 import React from "react";
-import { Badge, Button, Descriptions, PageHeader } from "antd";
-import { Link } from "react-router-dom";
+import { Badge, Button, PageHeader } from "antd";
+import { useDispatch } from "react-redux";
+import { PATIENT_SELECTED, PATIENT_LOGOUT } from "../Redux/Actions";
 
 function Header(props) {
+  const dispatch = useDispatch();
+
+  const onSetPatientSelected = (data) => {
+    dispatch({
+      type: PATIENT_SELECTED,
+      payload: data,
+    });
+  };
+
+  const onLogout = () => {
+    dispatch({
+      type: PATIENT_LOGOUT,
+    });
+  };
+
   return (
     <div>
       <div className="site-page-header-ghost-wrapper">
@@ -12,15 +28,15 @@ function Header(props) {
           title="HMS"
           subTitle="Solution For Hospital"
           extra={[
-            <Link to="/bookappointment">
-              <Button key="3">Book Appointment</Button>
-            </Link>,
-            <Link to="/myappointment">
-              <Badge size={"default"} count={4}>
-                <Button key="2">My Appointments</Button>
-              </Badge>
-            </Link>,
-            <Button key="1" type="primary">
+            <Button key="3" onClick={() => onSetPatientSelected("BA")}>
+              Book Appointment
+            </Button>,
+            <Badge size={"default"} count={4}>
+              <Button key="2" onClick={() => onSetPatientSelected("MA")}>
+                My Appointments
+              </Button>
+            </Badge>,
+            <Button key="1" type="primary" onClick={() => onLogout()}>
               Logout
             </Button>,
           ]}
