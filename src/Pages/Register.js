@@ -4,8 +4,7 @@ import RegisterForm from "../Component/RegisterForm";
 
 function Login(props) {
   return (
-    <div>
-      <Typography.Title level={1}>Register</Typography.Title>
+    <div className="m-5">
       <RegisterForm />
     </div>
   );

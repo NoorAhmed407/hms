@@ -13,7 +13,7 @@ const FormLogin = () => {
   };
 
   return (
-    <div>
+    <div className="m-5">
       <Typography.Title>Login</Typography.Title>
       <div className="my-2">
         <InputField

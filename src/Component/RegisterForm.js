@@ -5,7 +5,7 @@ import InputField from "./InputField";
 
 function RegisterForm(props) {
   return (
-    <div>
+    <div className="m-5">
       <Typography.Title>Register</Typography.Title>
       <div className="my-2">
         <InputField
