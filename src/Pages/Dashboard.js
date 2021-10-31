@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import { FileOutlined, TeamOutlined, UserOutlined } from "@ant-design/icons";
 import Statistics from "../Component/Dashboard/Statistics";
+import TableComponent from "../Component/Dashboard/Table";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -51,7 +52,13 @@ const Dashboard = (props) => {
             className="site-layout-background"
             style={{ padding: 24, minHeight: 360 }}
           >
-            {selected == "" ? <Statistics /> : selected}
+            {selected == "" ? (
+              <Statistics />
+            ) : selected == "User List" || selected == "Doctor List" ? (
+              <TableComponent />
+            ) : (
+              selected
+            )}
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

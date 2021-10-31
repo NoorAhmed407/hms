@@ -1,6 +1,5 @@
 import React from "react";
 import { Statistic, Row, Col } from "antd";
-import { LikeOutlined } from "@ant-design/icons";
 
 function Statistics(props) {
   return (
